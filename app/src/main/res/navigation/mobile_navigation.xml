@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.bariscangungor.teknikservisuygulamas.ui.home.EvFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detaylar"
+            app:destination="@id/detaylar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_sms"
+        android:name="com.bariscangungor.teknikservisuygulamas.ui.ekle.EkleFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_smsgecmisi" />
+
+    <fragment
+        android:id="@+id/navigation_ekle"
+        android:name="com.bariscangungor.teknikservisuygulamas.ui.sms.SmsGecmisiFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_ekle" >
+        <action
+            android:id="@+id/action_navigation_ekle_to_detaylar"
+            app:destination="@id/detaylar" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaylar"
+        android:name="com.bariscangungor.teknikservisuygulamas.ui.detaylar.detaylar"
+        android:label="Detaylar"
+        tools:layout="@layout/fragment_detaylar">
+        <action
+            android:id="@+id/action_detaylar_to_duzenle"
+            app:destination="@id/duzenle" />
+    </fragment>
+    <fragment
+        android:id="@+id/duzenle"
+        android:name="com.bariscangungor.teknikservisuygulamas.ui.detaylar.duzenle"
+        android:label="Düzenle"
+        tools:layout="@layout/fragment_duzenle" />
+</navigation>
